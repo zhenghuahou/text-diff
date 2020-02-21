@@ -2,7 +2,7 @@
 
 This is a simple module for comparing  text diff , based on the excellent [fast-diff](https://github.com/jhchen/fast-diff) by [Jason Chen](https://github.com/jhchen).
 
-###example usage
+### example usage
 
 Assuming you've correctly installed the `npm` module with `npm i simple-text-diff [--save|--save-dev]`:
 
