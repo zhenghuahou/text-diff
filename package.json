@@ -1,11 +1,8 @@
 {
-  "name": "text-diff",
+  "name": "simple-text-diff",
   "version": "1.0.1",
-  "description": "text diff",
+  "description": "a simple module for comparing  text diff",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "jest"
   },
@@ -26,6 +23,7 @@
   },
   "homepage": "https://github.com/zhenghuahou/text-diff#readme",
   "files": [
+    "test",
     "index.js"
   ],
   "devDependencies": {
