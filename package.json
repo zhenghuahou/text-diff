@@ -11,10 +11,13 @@
     "url": "git+https://github.com/zhenghuahou/text-diff.git"
   },
   "keywords": [
+    "simple",
+    "text",
     "diff",
     "string",
-    "text",
-    "patch"
+    "patch",
+    "diffPatch",
+    "diffPatchBySeparator"
   ],
   "author": "houzhenghua",
   "license": "MIT",

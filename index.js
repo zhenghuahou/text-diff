@@ -31,7 +31,6 @@ function diffPatch(oldText = '', newText = '') {
   )
 }
 
-//得到转化之后的数组集合
 function getCollection(oldText, newText, separator) {
   const originalArr = oldText.split(separator)
   const compareArr = newText.split(separator)
