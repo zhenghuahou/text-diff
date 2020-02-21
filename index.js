@@ -1,4 +1,4 @@
-const Diff = require('fast-diff') //ok
+const Diff = require('fast-diff')
 const { INSERT, EQUAL, DELETE } = Diff
 
 function format(operation, txt = '') {
