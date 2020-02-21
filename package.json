@@ -1,0 +1,37 @@
+{
+  "name": "text-diff",
+  "version": "1.0.0",
+  "description": "text diff",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenghuahou/text-diff.git"
+  },
+  "keywords": [
+    "diff",
+    "string",
+    "text",
+    "patch"
+  ],
+  "author": "houzhenghua",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhenghuahou/text-diff/issues"
+  },
+  "homepage": "https://github.com/zhenghuahou/text-diff#readme",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "fast-diff": "^1.2.0"
+  }
+}
