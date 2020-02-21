@@ -1,6 +1,6 @@
 {
   "name": "text-diff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "text diff",
   "main": "index.js",
   "directories": {
