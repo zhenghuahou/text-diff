@@ -1,7 +1,36 @@
-const Diff = require('fast-diff')
-const { INSERT, EQUAL, DELETE } = Diff
 
-function format(operation, txt = '') {
+
+interface DiffType {
+  INSERT: number;
+  EQUAL: number;
+  DELETE: number;
+  [propName: string]: any;
+}
+
+
+type ArrItem = Array<string>;
+type TextItem = string | number | undefined;
+
+interface DataParams {
+  revisionArr: ArrItem;
+  intersectArr: ArrItem;
+  isBefore?: boolean
+}
+interface DiffPatchResult {
+  before: string;
+  after: string;
+}
+
+interface CollectionType {
+  originalArr: ArrItem;
+  compareArr: ArrItem;
+  intersectArr: ArrItem;
+}
+
+const Diff = require('fast-diff')
+const { INSERT, EQUAL, DELETE } = <DiffType>Diff
+
+function format(operation: number, txt: string = ''): string {
   if (!txt) return txt
   if (operation === DELETE) {
     txt = `<del>${txt}</del>`
@@ -10,11 +39,16 @@ function format(operation, txt = '') {
   }
   return txt
 }
-//单个字符比较,得到`before`,`after`格式化文本
-function diffPatch(oldText = '', newText = '') {
+
+/**
+ * 单个字符比较,得到`before`,`after`格式化文本
+ * @param oldText 
+ * @param newText 
+ */
+function diffPatch(oldText: string = '', newText: string = ''): DiffPatchResult {
   const result = Diff(`${oldText}`, `${newText}`)
   return result.reduce(
-    (accumulator, cur) => {
+    (accumulator: DiffPatchResult, cur: [number, string]) => {
       const [operation, str] = cur
       let { before, after } = accumulator
       // operation值为-1,0按照result顺序拼接得到`before`字符串
@@ -31,7 +65,7 @@ function diffPatch(oldText = '', newText = '') {
   )
 }
 
-function getCollection(oldText, newText, separator) {
+function getCollection(oldText: string, newText: string, separator: string): CollectionType {
   const originalArr = oldText.split(separator)
   const compareArr = newText.split(separator)
   const originalSet = new Set(originalArr)
@@ -44,12 +78,15 @@ function getCollection(oldText, newText, separator) {
   }
 }
 
-//返回处理过的格式化文本
+/**
+ * 
+ * 返回处理过的格式化文本
+ */
 function getPatchText({
   revisionArr = [],
   intersectArr = [],
   isBefore = true
-} = {}) {
+}: DataParams): string {
   const intersectLen = intersectArr.length
   const { separator } = Diff
   const r = revisionArr.reduce((accumulator, cur) => {
@@ -67,15 +104,19 @@ function getPatchText({
     : r.slice(0)
 }
 
-//通过指定分隔符比较文本,得到`before`,`after`格式化文本
-function diffPatchBySeparator(oldText = '', newText = '', separator = ',') {
+/**
+ * 通过指定分隔符比较文本,得到`before`,`after`格式化文本
+ * @param oldText 
+ * @param newText 
+ * @param separator 
+ */
+function diffPatchBySeparator(oldText: TextItem = '', newText: TextItem = '', separator: TextItem = ','): DiffPatchResult {
   const { originalArr, compareArr, intersectArr } = getCollection(
     `${oldText}`,
     `${newText}`,
-    separator
+    `${separator}`
   )
 
-  //缓存`separator`
   Diff.separator = separator
 
   const before = getPatchText({ revisionArr: originalArr, intersectArr })

@@ -1,4 +1,4 @@
-const diff = require('../index')
+const diff = require('@App/index')
 
 const case1 = [1, 2]
 const case2 = ['S级免费开发,站内开发', '付费对外开放']
