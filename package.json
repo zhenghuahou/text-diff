@@ -11,8 +11,8 @@
     "check-types": "tsc --watch --noEmit",
     "prepare": "npm run build && npm run  build:types",
     "preversion": "npm run test",
-    "version": "git commit -am'update version'",
-    "postversion": "git push --tags"
+    "postversion": "git commit -am'update version' && git push --tags",
+    "publish": "npm run prepare && npm version patch &&  echo 11"
   },
   "repository": {
     "type": "git",
