@@ -1,12 +1,9 @@
-
-
 interface DiffType {
   INSERT: number;
   EQUAL: number;
   DELETE: number;
   [propName: string]: any;
 }
-
 
 type ArrItem = Array<string>;
 type TextItem = string | number | undefined;
@@ -20,7 +17,6 @@ interface DiffPatchResult {
   before: string;
   after: string;
 }
-
 interface CollectionType {
   originalArr: ArrItem;
   compareArr: ArrItem;
