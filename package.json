@@ -2,8 +2,8 @@
   "name": "simple-text-diff",
   "version": "1.2.0",
   "description": "a simple module for comparing  text diff",
-  "main": "lib/main.js",
-  "types": "lib/main.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "babel src --out-dir lib --extensions \".ts,.tsx\"",
     "test": "jest",
@@ -12,7 +12,7 @@
     "prepare": "npm run build && npm run  build:types",
     "preversion": "npm run test",
     "gitpush": "git commit -am'update version' && git push",
-    "publish": "npm run prepare && npm version minor && npm publish  && echo'Package release successful'"
+    "release": "npm run prepare && npm version minor && npm publish  && echo'Package release successful'"
   },
   "repository": {
     "type": "git",
