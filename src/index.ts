@@ -1,12 +1,12 @@
+type ArrItem = Array<string>;
+type TextItem = string | number | undefined;
+
 interface DiffType {
   INSERT: number;
   EQUAL: number;
   DELETE: number;
   [propName: string]: any;
 }
-
-type ArrItem = Array<string>;
-type TextItem = string | number | undefined;
 
 interface DataParams {
   revisionArr: ArrItem;
@@ -22,6 +22,12 @@ interface CollectionType {
   compareArr: ArrItem;
   intersectArr: ArrItem;
 }
+
+interface DiffResult {
+  diffPatchBySeparator(oldText:TextItem,newText:TextItem,separator:TextItem): DiffPatchResult;
+  diffPatch(oldText:string,newText:string): DiffPatchResult;
+}
+
 
 const Diff = require('fast-diff')
 const { INSERT, EQUAL, DELETE } = <DiffType>Diff
@@ -127,7 +133,8 @@ function diffPatchBySeparator(oldText: TextItem = '', newText: TextItem = '', se
   }
 }
 
-module.exports = {
-  diffPatch,
-  diffPatchBySeparator
+
+export default  <DiffResult>{
+  diffPatch:diffPatch,
+  diffPatchBySeparator:diffPatchBySeparator
 }
