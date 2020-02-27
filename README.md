@@ -7,9 +7,7 @@ This is a simple module for comparing  text diff , based on the excellent [fast-
 Assuming you've correctly installed the `npm` module with `npm i simple-text-diff [--save|--save-dev]`:
 
 ```js
-const diff = require('simple-text-diff')
-//or
-// import diff from 'simple-text-diff'
+import diff from 'simple-text-diff'
 
 const txt1 = "S级免费开放,站内开发"
 const txt2 = "付费对外开放"
