@@ -1,6 +1,6 @@
 {
   "name": "simple-text-diff",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a simple module for comparing  text diff",
   "main": "lib/main.js",
   "types": "lib/main.d.ts",
