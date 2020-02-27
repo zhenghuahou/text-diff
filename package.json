@@ -12,7 +12,7 @@
     "prepare": "npm run build && npm run  build:types",
     "preversion": "npm run test",
     "gitpush": "git commit -am'update version' && git push",
-    "release": "npm run prepare && npm version minor && npm publish  && echo'Package release successful'"
+    "release": "npm run prepare && npm version minor && npm publish"
   },
   "repository": {
     "type": "git",
