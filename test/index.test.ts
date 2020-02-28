@@ -1,4 +1,4 @@
-import diff from '@App/index';
+import diff from 'index';
 const case1 = [1, 2]
 const case2 = ['S级免费开发,站内开发', '付费对外开放']
 const case3 = ['', '付费对外开放']
