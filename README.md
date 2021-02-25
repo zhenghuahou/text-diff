@@ -12,11 +12,11 @@ const oldText = 'One difference is that interfaces create a new name that is use
 const newText = 'One diffenec is that interfaces create a new name that is used everywhere. Type aliases don’t create a new name — for instance, error messages won’t use the alias name. In the code below, hovering over interfaced in an editor will show that it returns an Interface, but will show that aliased returns object literal type.Hope you will be happy every day'
 
 //one way 
-const result1 = diffPatch(oldText, newText)
+const result1 = diff.diffPatch(oldText, newText)
 
 //the other way is separated by the specified separator
 //If no separator is supplied,the default value is a comma
-const result2 = diffPatchBySeparator(oldText, newText,'.')
+const result2 = diff.diffPatchBySeparator(oldText, newText,'.')
 ```
 
 The comparison results are shown in the figure below:
